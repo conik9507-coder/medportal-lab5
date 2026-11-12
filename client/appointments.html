@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedPortal - Журнал записів</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Трохи стилів для таблиці */
+    .appointments-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .appointments-table th, .appointments-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+    .appointments-table th { background: #f8f9fa; color: #333; font-weight: 600; }
+    .appointments-table tr:last-child td { border-bottom: none; }
+    .btn-delete { background: #d32f2f; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+    .btn-delete:hover { background: #b71c1c; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <h1>MedPortal</h1>
+      <nav>
+        <a href="index.html">Лікарі</a>
+        <a href="appointments.html" class="active">Журнал записів</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Журнал записів пацієнтів</h2>
+    <div style="overflow-x: auto;">
+      <table class="appointments-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Пацієнт</th>
+            <th>Телефон</th>
+            <th>Лікар</th>
+            <th>Дата</th>
+            <th>Дія</th>
+          </tr>
+        </thead>
+        <tbody id="appointments-list">
+          <tr><td colspan="6">Завантаження...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

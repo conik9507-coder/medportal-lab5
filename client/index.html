@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedPortal - Запис до лікаря</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <h1>MedPortal</h1>
+            <nav>
+        <a href="index.html" class="active">Лікарі</a>
+        <a href="appointments.html">Журнал записів</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Наші спеціалісти</h2>
+    <div id="doctors-list" class="doctors-grid">
+      <!-- Картки лікарів з'являться тут за допомогою JS -->
+      <p>Завантаження лікарів...</p>
+    </div>
+  </main>
+
+  <!-- Модальне вікно для запису -->
+  <div id="modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="close-btn" id="close-modal">&times;</button>
+      <h3 id="modal-title">Запис до лікаря</h3>
+      
+      <form id="appointment-form">
+        <input type="hidden" id="doctor-id" required>
+        
+        <div class="form-group">
+          <label for="patient-name">Ваше ім'я *</label>
+          <input type="text" id="patient-name" placeholder="Іван Іванов" required minlength="2">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Телефон *</label>
+          <input type="tel" id="phone" placeholder="+380991234567" required pattern="\+380\d{9}">
+          <small class="hint">Формат: +380XXXXXXXXX</small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" placeholder="ivan@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Дата прийому *</label>
+          <input type="date" id="date" required>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">Підтвердити</button>
+        <div id="form-message" class="message"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
